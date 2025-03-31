@@ -1,0 +1,14 @@
+D:\HankLee\ASP.NET\EmpSysVer0\TrainEMPDB\bin\Debug\net8.0\TrainEMPDB.deps.json
+D:\HankLee\ASP.NET\EmpSysVer0\TrainEMPDB\bin\Debug\net8.0\TrainEMPDB.runtimeconfig.json
+D:\HankLee\ASP.NET\EmpSysVer0\TrainEMPDB\bin\Debug\net8.0\TrainEMPDB.dll
+D:\HankLee\ASP.NET\EmpSysVer0\TrainEMPDB\bin\Debug\net8.0\TrainEMPDB.pdb
+D:\HankLee\ASP.NET\EmpSysVer0\TrainEMPDB\obj\Debug\net8.0\TrainEMPDB.csproj.AssemblyReference.cache
+D:\HankLee\ASP.NET\EmpSysVer0\TrainEMPDB\obj\Debug\net8.0\TrainEMPDB.GeneratedMSBuildEditorConfig.editorconfig
+D:\HankLee\ASP.NET\EmpSysVer0\TrainEMPDB\obj\Debug\net8.0\TrainEMPDB.AssemblyInfoInputs.cache
+D:\HankLee\ASP.NET\EmpSysVer0\TrainEMPDB\obj\Debug\net8.0\TrainEMPDB.AssemblyInfo.cs
+D:\HankLee\ASP.NET\EmpSysVer0\TrainEMPDB\obj\Debug\net8.0\TrainEMPDB.csproj.CoreCompileInputs.cache
+D:\HankLee\ASP.NET\EmpSysVer0\TrainEMPDB\obj\Debug\net8.0\TrainEMPDB.dll
+D:\HankLee\ASP.NET\EmpSysVer0\TrainEMPDB\obj\Debug\net8.0\refint\TrainEMPDB.dll
+D:\HankLee\ASP.NET\EmpSysVer0\TrainEMPDB\obj\Debug\net8.0\TrainEMPDB.pdb
+D:\HankLee\ASP.NET\EmpSysVer0\TrainEMPDB\obj\Debug\net8.0\TrainEMPDB.genruntimeconfig.cache
+D:\HankLee\ASP.NET\EmpSysVer0\TrainEMPDB\obj\Debug\net8.0\ref\TrainEMPDB.dll

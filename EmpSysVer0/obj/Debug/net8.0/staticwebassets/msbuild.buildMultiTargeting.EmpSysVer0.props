@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\EmpSysVer0.props" />
+</Project>

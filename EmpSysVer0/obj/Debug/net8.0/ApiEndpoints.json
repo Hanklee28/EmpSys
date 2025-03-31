@@ -1,0 +1,32 @@
+[
+  {
+    "ContainingType": "EmpSysVer0.Controllers.DeptController",
+    "Method": "Index",
+    "RelativePath": "api/Dept",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmpSysVer0.Controllers.DeptController",
+    "Method": "AllDept",
+    "RelativePath": "api/Dept/allDept",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmpSysVer0.Controllers.TestController",
+    "Method": "OK",
+    "RelativePath": "api/Test/OK",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

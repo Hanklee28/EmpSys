@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using EmpSysVer0.Services;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using TrainEMPDB.Models;
 
@@ -8,10 +9,9 @@ namespace EmpSysVer0.Controllers
     [ApiController]
     public class TestController : ApiControllerBase
     {
-        public TestController(TrainEMPDBcontext dbcontext,/* ClaimAccessor claim,*/ IMemoryCache memoryCache ) : base(dbcontext,/*claim,*/memoryCache)
+        public TestController(TrainEMPDBcontext dbcontext,/* ClaimAccessor claim, */IMemoryCache memoryCache) : base(dbcontext, memoryCache)
         {
             _dbcontext = dbcontext;
-            //_logger =logger;
             //_claim = claim;
         }
 
@@ -29,10 +29,11 @@ namespace EmpSysVer0.Controllers
 
             try
             {
-                //logger.LogInformation("1");
-                //logger.LogTrace("2");
-                //logger.LogDebug("3");
-                //logger.LogError("4");
+
+                //_logger.LogInformation("1");
+                //_logger.LogTrace("2");
+                //_logger.LogDebug("3");
+                //_logger.LogError("4");
                 return Ok("測試yessirskiiiiiiiiii");
             }
             catch (Exception ex)

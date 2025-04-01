@@ -8,11 +8,11 @@ using Microsoft.AspNetCore;
 public class Program
 {
 
-    private readonly static ILog _log = LogManager.GetLogger(typeof(Program));
+    private readonly static ILog _logger = LogManager.GetLogger(typeof(Program));
     public static void Main(string[] args)
     {
         LoadLog4netConfig();
-        _log.Info("Application Start");
+        _logger.Info("Application Start");
 
 
         var builder = WebApplication.CreateBuilder(args);

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using EmpSysVer0.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using TrainEMPDB.Models;
@@ -10,12 +11,12 @@ namespace EmpSysVer0.Controllers
     public class ApiControllerBase : Controller
     {
         public TrainEMPDBcontext _dbcontext;
-        //public ClaimAccessor _claim;
+        public ClaimAccessor _claim;
         public IMemoryCache _memoryCache;
 
         //public ILogger _logger;
         //public ILogger<ApiControllerBase> logger=null;
-        public ApiControllerBase(TrainEMPDBcontext dbcontext, /* ClaimAccessor claim,*/ IMemoryCache memoryCache)
+        public ApiControllerBase(TrainEMPDBcontext dbcontext,/* ClaimAccessor claim, */IMemoryCache memoryCache)
         {
             _dbcontext = dbcontext;
             //_claim = claim;

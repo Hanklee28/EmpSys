@@ -1,13 +1,19 @@
 ﻿using log4net.Config;
 using log4net;
 using System.Reflection;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
+using TrainEMPDB.Models;
 
 namespace EmpSysVer0.Helpers
 {
     public class Log4netLogger : ILogger
     {
-        private readonly ILog _log;
-
+        private readonly ILog _logger;
+        public Log4netLogger(ILog logger)
+        {
+            _logger = logger;
+        }
         public Log4netLogger(string name, FileInfo fileInfo)
         {
             var repository = LogManager.CreateRepository(
@@ -15,7 +21,7 @@ namespace EmpSysVer0.Helpers
                     typeof(log4net.Repository.Hierarchy.Hierarchy)
                 );
             XmlConfigurator.Configure(repository, fileInfo);
-            _log = LogManager.GetLogger(repository.Name, name);
+            _logger = LogManager.GetLogger(repository.Name, name);
         }
 
         public IDisposable BeginScope<TState>(TState state)
@@ -27,12 +33,12 @@ namespace EmpSysVer0.Helpers
         {
             switch (logLevel)
             {
-                case LogLevel.Critical: return _log.IsFatalEnabled;
+                case LogLevel.Critical: return _logger.IsFatalEnabled;
                 case LogLevel.Debug:
-                case LogLevel.Trace: return _log.IsDebugEnabled;
-                case LogLevel.Error: return _log.IsErrorEnabled;
-                case LogLevel.Information: return _log.IsInfoEnabled;
-                case LogLevel.Warning: return _log.IsWarnEnabled;
+                case LogLevel.Trace: return _logger.IsDebugEnabled;
+                case LogLevel.Error: return _logger.IsErrorEnabled;
+                case LogLevel.Information: return _logger.IsInfoEnabled;
+                case LogLevel.Warning: return _logger.IsWarnEnabled;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(logLevel));
             }
@@ -58,14 +64,14 @@ namespace EmpSysVer0.Helpers
             {
                 switch (logLevel)
                 {
-                    case LogLevel.Critical: _log.Fatal(message); break;
+                    case LogLevel.Critical: _logger.Fatal(message); break;
                     case LogLevel.Debug:
-                    case LogLevel.Trace: _log.Debug(message); break;
-                    case LogLevel.Error: _log.Error(message); break;
-                    case LogLevel.Information: _log.Info(message); break;
-                    case LogLevel.Warning: _log.Warn(message); break;
+                    case LogLevel.Trace: _logger.Debug(message); break;
+                    case LogLevel.Error: _logger.Error(message); break;
+                    case LogLevel.Information: _logger.Info(message); break;
+                    case LogLevel.Warning: _logger.Warn(message); break;
                     default:
-                        _log.Warn($"Unknown log level {logLevel}.\r\n{message}");
+                        _logger.Warn($"Unknown log level {logLevel}.\r\n{message}");
                         break;
                 }
             }

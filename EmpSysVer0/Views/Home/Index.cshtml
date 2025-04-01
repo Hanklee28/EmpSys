@@ -1,8 +1,65 @@
-﻿@{
+﻿@model IEnumerable<string>
+
+@{
+    ViewBag.Title = "db";
+}
+
+<h2>部門員工列表</h2>
+
+<!-- 部門編號輸入框 -->
+<label for="deptNo">輸入部門編號：</label>
+<input type="text" id="deptNo" />
+<button id="loadEmployees">查詢</button>
+
+<!-- 顯示員工列表 -->
+<ul id="employeeList"></ul>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            // 點擊查詢按鈕時執行
+            $('#loadEmployees').click(function () {
+                var deptNo = $('#deptNo').val(); // 取得使用者輸入的部門編號
+                if (deptNo) {
+                    $.ajax({
+                        url: '/api/db', // 呼叫 API 端點
+                        type: 'GET', // 使用 GET 方法
+                        headers: { 'header': deptNo }, // 在 Header 傳遞部門編號
+                        success: function (data) {
+                            $('#employeeList').empty(); // 清空先前的結果
+                            if (data && data.length > 0) {
+                                // 遍歷返回的員工數據，並添加到列表
+                                $.each(data, function (index, emp) {
+                                    $('#employeeList').append('<li>' + emp.empName + '</li>');
+                                });
+                            } else {
+                                $('#employeeList').append('<li>沒有找到員工</li>'); // 無數據時顯示
+                            }
+                        },
+                        error: function () {
+                            alert('請求失敗，請重試'); // 錯誤處理
+                        }
+                    });
+                } else {
+                    alert('請輸入部門編號'); // 提示輸入部門編號
+                }
+            });
+        });
+    </script>
+}
+
+@* @{
+    ViewBag.title="";
+}
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <p>
+
+    </p>
+
+</div> *@

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using TrainEMPDB.Models;
+using EmpSysVer0.Services;
 
 namespace EmpSysVer0.Controllers
 {
@@ -13,10 +14,9 @@ namespace EmpSysVer0.Controllers
 
     {
 
-        public DeptController(TrainEMPDBcontext dbcontext,/* ClaimAccessor claim,*/ IMemoryCache memoryCache) : base(dbcontext,/*claim,*/memoryCache)
+        public DeptController(TrainEMPDBcontext dbcontext,/* ClaimAccessor claim, */IMemoryCache memoryCache) : base(dbcontext,memoryCache)
         {
             _dbcontext = dbcontext;
-            //_claim = claim;
         }
         public IActionResult Index()
         {

@@ -20,6 +20,80 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "EmpSysVer0.Controllers.empSys.Controllers.EmployeeController",
+    "Method": "Add",
+    "RelativePath": "api/Employee/addEmp",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "empBody",
+        "Type": "TrainEMPDB.Models.Employee",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmpSysVer0.Controllers.empSys.Controllers.EmployeeController",
+    "Method": "Data",
+    "RelativePath": "api/Employee/db",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "header",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmpSysVer0.Controllers.empSys.Controllers.EmployeeController",
+    "Method": "Dele",
+    "RelativePath": "api/Employee/deleEmp",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "empBody",
+        "Type": "TrainEMPDB.Models.Employee",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmpSysVer0.Controllers.empSys.Controllers.EmployeeController",
+    "Method": "Upd",
+    "RelativePath": "api/Employee/updEmp",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "empBody",
+        "Type": "TrainEMPDB.Models.Employee",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmpSysVer0.Controllers.LogController",
+    "Method": "Log",
+    "RelativePath": "api/Log/log",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "EmpSysVer0.Controllers.TestController",
     "Method": "OK",
     "RelativePath": "api/Test/OK",

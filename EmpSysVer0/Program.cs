@@ -27,7 +27,8 @@ public class Program
        
 
         var app = builder.Build();
-
+        // 啟用 CORS
+        app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
         // 設定 HTTP 請求管道
         startup.Configure(app, app.Environment);
 

@@ -1,6 +1,61 @@
 ﻿@{
+    ViewBag.Title = "API 查詢";
+}
+
+<h2>API 查詢範例</h2>
+
+<!-- 選擇 API -->
+<label for="apiSelect">選擇 API：</label>
+<select id="apiSelect">
+    <option value="/db">查詢員工 (部門編號)</option>
+    <option value="/products">查詢產品 (產品 ID)</option>
+    <option value="/orders">查詢訂單 (訂單編號)</option>
+</select>
+
+<br />
+<br />
+
+<!-- 輸入查詢參數 -->
+<label for="queryInput">輸入查詢參數：</label>
+<input type="text" id="queryInput" placeholder="輸入編號..." />
+
+<button onclick="fetchData()">查詢</button>
+
+<!-- 結果顯示區 -->
+<h3>查詢結果：</h3>
+<pre id="result"></pre>
+
+<script>
+    function fetchData() {
+        // 取得使用者選擇的 API 路徑
+        let apiEndpoint = document.getElementById("apiSelect").value;
+        let queryParam = document.getElementById("queryInput").value;
+
+        if (!queryParam) {
+            alert("請輸入查詢參數！");
+            return;
+        }
+
+        fetch(apiEndpoint, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "header": queryParam  // 傳遞參數到 Header
+            }
+        })
+        .then(response => response.json())  // 解析 JSON
+        .then(data => {
+            document.getElementById("result").textContent = JSON.stringify(data, null, 2);
+        })
+        .catch(error => {
+            document.getElementById("result").textContent = "查詢錯誤：" + error;
+        });
+    }
+</script>
+@* @{
     ViewData["Title"] = "Privacy Policy";
 }
 <h1>@ViewData["Title"]</h1>
 
 <p>Use this page to detail your site's privacy policy.</p>
+ *@

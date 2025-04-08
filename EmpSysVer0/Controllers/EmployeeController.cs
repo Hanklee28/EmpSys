@@ -13,20 +13,23 @@ namespace EmpSysVer0.Controllers
 {
 
 
-    namespace empSys.Controllers
-    {
+
         [Route("api/[controller]")]
         [ApiController]
         public class EmployeeController : ApiControllerBase
         {
 
-            public EmployeeController(TrainEMPDBcontext dbcontext,/* ClaimAccessor claim, */IMemoryCache memoryCache) : base(dbcontext, memoryCache)
+
+        public EmployeeController(TrainEMPDBcontext dbcontext,/* ClaimAccessor claim, */IMemoryCache memoryCache) : base(dbcontext, memoryCache)
             {
                 _dbcontext = dbcontext;
             }
+        public ActionResult Index()
+        {
+            return View();
+        }
 
-            //測試
-            [Route("db")]
+        [Route("db")]
             [HttpGet]
             public IActionResult Data([FromHeader] string header)
             {
@@ -181,6 +184,6 @@ namespace EmpSysVer0.Controllers
 
 
         }
-    }
+    
 
 }

@@ -20,7 +20,17 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EmpSysVer0.Controllers.empSys.Controllers.EmployeeController",
+    "ContainingType": "EmpSysVer0.Controllers.EmployeeController",
+    "Method": "Index",
+    "RelativePath": "api/Employee",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmpSysVer0.Controllers.EmployeeController",
     "Method": "Add",
     "RelativePath": "api/Employee/addEmp",
     "HttpMethod": "POST",
@@ -36,7 +46,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EmpSysVer0.Controllers.empSys.Controllers.EmployeeController",
+    "ContainingType": "EmpSysVer0.Controllers.EmployeeController",
     "Method": "Data",
     "RelativePath": "api/Employee/db",
     "HttpMethod": "GET",
@@ -52,7 +62,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EmpSysVer0.Controllers.empSys.Controllers.EmployeeController",
+    "ContainingType": "EmpSysVer0.Controllers.EmployeeController",
     "Method": "Dele",
     "RelativePath": "api/Employee/deleEmp",
     "HttpMethod": "POST",
@@ -68,7 +78,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EmpSysVer0.Controllers.empSys.Controllers.EmployeeController",
+    "ContainingType": "EmpSysVer0.Controllers.EmployeeController",
     "Method": "Upd",
     "RelativePath": "api/Employee/updEmp",
     "HttpMethod": "POST",
@@ -87,16 +97,6 @@
     "ContainingType": "EmpSysVer0.Controllers.LogController",
     "Method": "Log",
     "RelativePath": "api/Log/log",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EmpSysVer0.Controllers.TestController",
-    "Method": "OK",
-    "RelativePath": "api/Test/OK",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

@@ -35,7 +35,7 @@ namespace EmpSysVer0
                 .UseSqlServer(configuration.GetConnectionString("DbString"));
 
             });
-
+            services.AddMemoryCache();
             services.AddControllersWithViews();
             services.AddRazorPages();
         }

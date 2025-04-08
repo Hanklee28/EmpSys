@@ -1,0 +1,167 @@
+﻿<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-4 text-gray-800">Test</h1>
+    <!-- Circle Buttons -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">部門員工列表</h6>
+        </div>
+        <div class="card-body">
+            <p>
+                Use Font Awesome Icons (included with this theme package) along with the circle
+                buttons as shown in the examples below!
+            </p>
+            <!-- (Default) -->
+            <div class="form-group">
+                <label for="deptNo">選擇部門編號：</label>
+                <select id="deptNo" class="form-control" style="width: 200px;">
+                    <option value="">請選擇</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+
+            <!-- 查詢按鈕 -->
+            <button id="loadEmployees" class="btn btn-primary">查詢</button>
+
+            <!-- Loading Spinner -->
+            <div id="loadingSpinner" class="spinner-border text-primary ml-3" role="status" style="display: none;">
+                <span class="sr-only">Loading...</span>
+            </div>
+
+            <!-- 顯示員工列表 -->
+ @*            <ul id="employeeList" class="mt-4"></ul> *@
+
+            <!-- 員工表格 -->
+            <div class="table-responsive mt-4">
+                <table class="table table-bordered" id="employeeTable" style="display: none;">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>員工姓名</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div id="noDataMsg" class="mt-2 text-muted" style="display: none;">找不到該部門的員工</div>
+            </div>
+
+            <!-- JavaScript 區塊 -->
+            @section Scripts {
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+                <script>
+                    $(document).ready(function () 
+                    {
+
+                        $('#loadEmployees').click(function () 
+                        {
+                            var deptNo = $('#deptNo').val();
+                            if (!deptNo) {
+                                alert('請選擇部門編號');
+                                return;
+                            }
+
+                            // 顯示 loading，清空舊資料
+                            $('#loadingSpinner').show();
+                            $('#employeeTable').hide();
+                            $('#employeeTable tbody').empty();
+                            $('#noDataMsg').hide();
+
+                            $.ajax({
+                                url: '/api/employee/db',
+                                type: 'GET',
+                                headers: { 'header': deptNo },
+                                success: function (data) {
+                                    $('#loadingSpinner').hide();
+
+                                    if (data && data.length > 0) {
+                                        $.each(data, function (index, emp) {
+                                            $('#employeeTable tbody').append('<tr><td>' + emp.empName + '</td></tr>');
+                                        });
+                                        $('#employeeTable').show();
+                                    } else {
+                                        $('#noDataMsg').show();
+                                    }
+                                },
+                                error: function () {
+                                    $('#loadingSpinner').hide();
+                                    alert('請求失敗，請查看 console 錯誤');
+                                }
+                            });
+                        });
+                    });
+                </script>
+            }
+
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        </div>
+    </div>
+
+</div>
+@* <div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-4 text-gray-800">Test</h1>
+
+    <h2>部門員工列表</h2>
+
+    <!-- 部門選擇 -->
+    <div class="form-group">
+        <label for="deptNo">選擇部門編號：</label>
+        <select id="deptNo" class="form-control" style="width: 200px;">
+            <option value="">請選擇</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+    </div>
+
+    <!-- 查詢按鈕 -->
+    <button id="loadEmployees" class="btn btn-primary">查詢</button>
+
+    <!-- 顯示員工列表 -->
+    <ul id="employeeList" class="mt-4"></ul>
+
+
+    @section Scripts {
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                // 點擊查詢按鈕時執行
+                $('#loadEmployees').click(function () {
+                    var deptNo = $('#deptNo').val(); // 取得使用者輸入的部門編號
+                    if (deptNo) {
+                        $.ajax({
+                            url: '/api/employee/db', // 呼叫 API 端點
+                            type: 'GET', // 使用 GET 方法
+                            headers: { 'header': deptNo }, // 在 Header 傳遞部門編號
+                            success: function (data) {
+                                $('#employeeList').empty(); // 清空先前的結果
+                                if (data && data.length > 0) {
+                                    // 遍歷返回的員工數據，並添加到列表
+                                    $.each(data, function (index, emp) {
+                                        $('#employeeList').append('<li>' + emp.empName + '</li>');
+                                    });
+                                } else {
+                                    $('#employeeList').append('<li>沒有找到員工</li>'); // 無數據時顯示
+                                }
+                            },
+                            error: function () {
+                                alert('請求失敗，請重試'); // 錯誤處理
+                            }
+                        });
+                    } else {
+                        alert('請輸入部門編號'); // 提示輸入部門編號
+                    }
+                });
+            });
+        </script>
+    }
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+</div> *@

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\HankLee\\ASP.NET\\EmpSysVer0\\EmpSysVer0\\EmpSysVer0.csproj": {}
+    "D:\\HankLee\\Code\\ASP.NET\\Project\\EmpSysVer0\\EmpSysVer0\\EmpSysVer0.csproj": {}
   },
   "projects": {
-    "D:\\HankLee\\ASP.NET\\EmpSysVer0\\EmpSysVer0\\EmpSysVer0.csproj": {
+    "D:\\HankLee\\Code\\ASP.NET\\Project\\EmpSysVer0\\EmpSysVer0\\EmpSysVer0.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\HankLee\\ASP.NET\\EmpSysVer0\\EmpSysVer0\\EmpSysVer0.csproj",
+        "projectUniqueName": "D:\\HankLee\\Code\\ASP.NET\\Project\\EmpSysVer0\\EmpSysVer0\\EmpSysVer0.csproj",
         "projectName": "EmpSysVer0",
-        "projectPath": "D:\\HankLee\\ASP.NET\\EmpSysVer0\\EmpSysVer0\\EmpSysVer0.csproj",
+        "projectPath": "D:\\HankLee\\Code\\ASP.NET\\Project\\EmpSysVer0\\EmpSysVer0\\EmpSysVer0.csproj",
         "packagesPath": "C:\\Users\\wistronits\\.nuget\\packages\\",
-        "outputPath": "D:\\HankLee\\ASP.NET\\EmpSysVer0\\EmpSysVer0\\obj\\",
+        "outputPath": "D:\\HankLee\\Code\\ASP.NET\\Project\\EmpSysVer0\\EmpSysVer0\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\HankLee\\ASP.NET\\EmpSysVer0\\TrainEMPDB\\TrainEMPDB.csproj": {
-                "projectPath": "D:\\HankLee\\ASP.NET\\EmpSysVer0\\TrainEMPDB\\TrainEMPDB.csproj"
+              "D:\\HankLee\\Code\\ASP.NET\\Project\\EmpSysVer0\\TrainEMPDB\\TrainEMPDB.csproj": {
+                "projectPath": "D:\\HankLee\\Code\\ASP.NET\\Project\\EmpSysVer0\\TrainEMPDB\\TrainEMPDB.csproj"
               }
             }
           }
@@ -92,14 +92,14 @@
         }
       }
     },
-    "D:\\HankLee\\ASP.NET\\EmpSysVer0\\TrainEMPDB\\TrainEMPDB.csproj": {
+    "D:\\HankLee\\Code\\ASP.NET\\Project\\EmpSysVer0\\TrainEMPDB\\TrainEMPDB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\HankLee\\ASP.NET\\EmpSysVer0\\TrainEMPDB\\TrainEMPDB.csproj",
+        "projectUniqueName": "D:\\HankLee\\Code\\ASP.NET\\Project\\EmpSysVer0\\TrainEMPDB\\TrainEMPDB.csproj",
         "projectName": "TrainEMPDB",
-        "projectPath": "D:\\HankLee\\ASP.NET\\EmpSysVer0\\TrainEMPDB\\TrainEMPDB.csproj",
+        "projectPath": "D:\\HankLee\\Code\\ASP.NET\\Project\\EmpSysVer0\\TrainEMPDB\\TrainEMPDB.csproj",
         "packagesPath": "C:\\Users\\wistronits\\.nuget\\packages\\",
-        "outputPath": "D:\\HankLee\\ASP.NET\\EmpSysVer0\\TrainEMPDB\\obj\\",
+        "outputPath": "D:\\HankLee\\Code\\ASP.NET\\Project\\EmpSysVer0\\TrainEMPDB\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

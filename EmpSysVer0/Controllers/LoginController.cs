@@ -30,7 +30,7 @@ namespace EmpSysVer0.Controllers
 
                 var emp = _dbcontext.Employees
                     .Where(x => x.EmpNo == acct)
-                    .Select(x => new { x.EmpNo, x.Birth })
+                    .Select(x => new { x.EmpNo, x.Birth, x.EmpName })
                     .FirstOrDefault();
 
                 if (emp == null || !string.Equals(pwd, emp.Birth))
@@ -50,13 +50,64 @@ namespace EmpSysVer0.Controllers
                     Size = 1
                 });
 
-                return Ok(new Response(emp.Birth)); // token 就是 birth（依你原始邏輯）
+                var responseData = new
+                {
+                    EmpNo = emp.EmpNo,
+                    Name = emp.EmpName
+                };
+
+                return Ok(new Response
+                {
+                    Data = responseData,
+                    Result = emp.Birth,
+                    Message = "成功",
+                    Success = true
+                });
             }
             catch (Exception ex)
             {
                 return Ok(new Response(ex));
             }
         }
+        //[AllowAnonymous]
+        //[Route("logInBirth")]
+        //[HttpPost]
+        //public IActionResult LoginBirth([FromBody] Login loginBody)
+        //{
+        //    try
+        //    {
+        //        var acct = loginBody.Account;
+        //        var pwd = loginBody.Password;
+
+        //        var emp = _dbcontext.Employees
+        //            .Where(x => x.EmpNo == acct)
+        //            .Select(x => new { x.EmpNo, x.Birth })
+        //            .FirstOrDefault();
+
+        //        if (emp == null || !string.Equals(pwd, emp.Birth))
+        //        {
+        //            return Ok(new Response { Message = "帳號或密碼錯誤" });
+        //        }
+
+        //        // 使用密碼當作唯一 key 來判斷是否登入
+        //        if (_memoryCache.TryGetValue(emp.Birth, out _))
+        //        {
+        //            throw new Exception("重複登入");
+        //        }
+
+        //        _memoryCache.Set(emp.Birth, DateTime.Now, new MemoryCacheEntryOptions
+        //        {
+        //            AbsoluteExpirationRelativeToNow = TimeSpan.FromSeconds(20),
+        //            Size = 1
+        //        });
+
+        //        return Ok(new Response(emp.Birth)); // token 就是 birth（依你原始邏輯）
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return Ok(new Response(ex));
+        //    }
+        //}
         ////Token生日
         //[AllowAnonymous]
         //[Route("logInBirth")]

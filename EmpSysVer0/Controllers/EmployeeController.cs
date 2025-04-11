@@ -24,12 +24,9 @@ namespace EmpSysVer0.Controllers
             {
                 _dbcontext = dbcontext;
             }
-        public ActionResult Index()
-        {
-            return View();
-        }
 
-        [Route("db")]
+
+            [Route("db")]
             [HttpGet]
             public IActionResult Data([FromHeader] string header)
             {
@@ -44,55 +41,74 @@ namespace EmpSysVer0.Controllers
                     return Ok(new Response(ex));
                 }
             }
-            ////[ServiceFilter(typeof(AuthorizationFilter))]
-            ////列出所有員工
-            //[Route("allEmp")]
-            //[HttpGet]
-            //public IActionResult AllEmp()
-            //{
 
-            //    var bonusYear = _claim._config.Year;
-            //    try
-            //    {
+        [Route("EmpInfo")]
+        [HttpGet]
+        public IActionResult EmpInfo([FromHeader] string header)
+        {
+            try
+            {
+                var webemp = _dbcontext.Employees
+                    .Where(x => x.EmpNo == header)
+                    .Select(x => new { x.EmpNo, x.EmpName, x.Sex, x.DeptNo, x.Salary, x.Birth })
+                    .FirstOrDefault();
 
-            //        var listEmp = _dbcontext.Employee.Select(x => new { x.EmpNo, x.EmpName, x.Sex, x.DeptNo, x.Salary, x.Birth }).ToList();
+                return Ok(webemp);
+            }
+            catch (Exception ex)
+            {
+                return Ok(new Response(ex));
+            }
+        }
+        ////[ServiceFilter(typeof(AuthorizationFilter))]
+        ////列出所有員工
+        //[Route("allEmp")]
+        //[HttpGet]
+        //public IActionResult AllEmp()
+        //{
 
-            //        // 建立存放有加薪後薪水的 List 
-            //        List<AddClass> data = new List<AddClass>();
+        //    var bonusYear = _claim._config.Year;
+        //    try
+        //    {
 
-            //        // 從 listEmp中撈取資料
-            //        foreach (var e in listEmp)
-            //        {
-            //            //以 AddClass 類別 format
-            //            AddClass cal = new AddClass();
-            //            cal.empNo = e.EmpNo;
-            //            cal.empName = e.EmpName;
-            //            cal.sex = e.Sex;
-            //            cal.deptNo = e.DeptNo;
-            //            cal.salary = e.Salary;
-            //            cal.year = bonusYear;
-            //            cal.bonusSalary = SalaryHelper.AddSalary(_claim._config.Year, e.Sex, e.DeptNo, e.Salary);
-            //            cal.birth = e.Birth;
-            //            data.Add(cal);
-            //        }
+        //        var listEmp = _dbcontext.Employee.Select(x => new { x.EmpNo, x.EmpName, x.Sex, x.DeptNo, x.Salary, x.Birth }).ToList();
 
-            //        return Ok(data);
+        //        // 建立存放有加薪後薪水的 List 
+        //        List<AddClass> data = new List<AddClass>();
 
+        //        // 從 listEmp中撈取資料
+        //        foreach (var e in listEmp)
+        //        {
+        //            //以 AddClass 類別 format
+        //            AddClass cal = new AddClass();
+        //            cal.empNo = e.EmpNo;
+        //            cal.empName = e.EmpName;
+        //            cal.sex = e.Sex;
+        //            cal.deptNo = e.DeptNo;
+        //            cal.salary = e.Salary;
+        //            cal.year = bonusYear;
+        //            cal.bonusSalary = SalaryHelper.AddSalary(_claim._config.Year, e.Sex, e.DeptNo, e.Salary);
+        //            cal.birth = e.Birth;
+        //            data.Add(cal);
+        //        }
 
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        return Ok(new Response(ex));
-            //    }
-            //}
+        //        return Ok(data);
 
 
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return Ok(new Response(ex));
+        //    }
+        //}
 
 
 
 
-            //新增員工
-            [Route("addEmp")]
+
+
+        //新增員工
+        [Route("addEmp")]
             [HttpPost]
             public IActionResult Add([FromBody] Employee empBody)
             {

@@ -21,16 +21,6 @@
   },
   {
     "ContainingType": "EmpSysVer0.Controllers.EmployeeController",
-    "Method": "Index",
-    "RelativePath": "api/Employee",
-    "HttpMethod": "",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EmpSysVer0.Controllers.EmployeeController",
     "Method": "Add",
     "RelativePath": "api/Employee/addEmp",
     "HttpMethod": "POST",
@@ -73,6 +63,22 @@
         "Name": "empBody",
         "Type": "TrainEMPDB.Models.Employee",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmpSysVer0.Controllers.EmployeeController",
+    "Method": "EmpInfo",
+    "RelativePath": "api/Employee/EmpInfo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "header",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

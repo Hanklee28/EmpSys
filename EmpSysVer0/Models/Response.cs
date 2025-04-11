@@ -3,7 +3,7 @@
     
         public class Response
         {
-
+            public object Data { get; set; }
             public object Result { get; set; }
             public string Message { get; set; }
             public bool Success { get; set; }

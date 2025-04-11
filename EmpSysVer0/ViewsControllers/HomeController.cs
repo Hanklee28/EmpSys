@@ -2,7 +2,7 @@ using System.Diagnostics;
 using EmpSysVer0.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EmpSysVer0.Controllers
+namespace EmpSysVer0.ViewsControllers
 {
     public class HomeController : Controller
     {

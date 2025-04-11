@@ -1,4 +1,5 @@
-﻿<div class="container-fluid">
+﻿<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<div class="container-fluid">
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -10,8 +11,25 @@
 
     <!-- Content Row -->
     <div class="row">
-
         <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Earnings (Monthly)
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800 user-salary">$40,000</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+@*         <!-- Earnings (Monthly) Card Example -->
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
@@ -28,7 +46,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> *@
 
         <!-- Earnings (Monthly) Card Example -->
         <div class="col-xl-3 col-md-6 mb-4">
@@ -39,7 +57,7 @@
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                 Earnings (Annual)
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800 year-salary">215,000</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -341,5 +359,33 @@
     </div>
 
 </div>
+
+<script>
+    $(document).ready(function () {
+        const empNo = localStorage.getItem("EmpNo");
+
+        if (!empNo) {
+            console.warn("尚未設定登入者員工編號");
+            return;
+        }
+
+        $.ajax({
+            url: '/api/employee/EmpInfo',
+            method: 'GET',
+            headers: {
+                'header': empNo  // 這個 key 必須是 header，不能改為其他名稱
+            },
+            success: function (res) {
+                console.log('API 回傳:', res);
+                if (res && res.salary) {
+                    $('.user-salary').text(`$${Number(res.salary).toLocaleString()}`);
+                    $('.year-salary').text(`$${(Number(res.salary) * 12).toLocaleString()}`);                }
+            },
+            error: function (err) {
+                console.error("取得使用者資料失敗", err);
+            }
+        });
+    });
+</script>
 <!-- /.container-fluid -->
  

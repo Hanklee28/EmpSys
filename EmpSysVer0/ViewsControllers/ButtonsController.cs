@@ -3,16 +3,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using TrainEMPDB.Models;
 
-namespace EmpSysVer0.Controllers
+namespace EmpSysVer0.ViewsControllers
 {
 
-    public class ButtonsController : ApiControllerBase//Controller
+    public class ButtonsController : Controller
     {
-        public ButtonsController(TrainEMPDBcontext dbcontext,/* ClaimAccessor claim, */IMemoryCache memoryCache) : base(dbcontext, memoryCache)
-        {
-            _dbcontext = dbcontext;
-            //_claim = claim;
-        }
+
         public IActionResult Index()
         {
             return View();

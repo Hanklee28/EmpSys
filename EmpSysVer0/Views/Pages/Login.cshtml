@@ -61,10 +61,55 @@
                                                            id="password" placeholder="Enter Password (Birth)">
                                                 </div>
                                                 <button type="submit" class="btn btn-primary btn-user btn-block">Login</button>
+                                                <!-- Loading Spinner -->
+                                                <div id="loading" style="display:none;">登入中，請稍候...</div>
+                                                <div id="loginMessage" class="mt-2 text-success"></div>
                                             </form>
                                         </div>
-
                                         <script>
+                                                document.getElementById('loginForm').addEventListener('submit', async function (e) {
+                                                e.preventDefault();
+
+                                                const account = document.getElementById('account').value;
+                                                const password = document.getElementById('password').value;
+                                                const body = { account, password };
+
+                                                const loading = document.getElementById('loading');
+                                                const msg = document.getElementById('loginMessage');
+                                                loading.style.display = 'block';
+                                                msg.textContent = '';
+
+                                                try {
+                                                    const response = await fetch('/api/Login/logInBirth', {
+                                                        method: 'POST',
+                                                        headers: { 'Content-Type': 'application/json' },
+                                                        body: JSON.stringify(body)
+                                                    });
+                                                    const result = await response.json();
+
+                                                    loading.style.display = 'none';
+
+                                                    if (!result.success) {
+                                                        alert(result.message || '登入失敗');
+                                                        return;
+                                                    }
+                                                    // 假設後端回傳登入者資訊
+                                                    localStorage.setItem("EmpNo", result.data.empNo);
+                                                    localStorage.setItem('userName', result.data.name);
+                                                    msg.textContent = '登入成功！即將跳轉...';
+
+                                                    setTimeout(() => {
+                                                        window.location.href = '/Home';
+                                                    }, 800); // 短暫顯示成功再跳轉
+
+                                                } catch (err) {
+                                                    console.error(err);
+                                                    loading.style.display = 'none';
+                                                    alert("登入失敗，請稍後再試");
+                                                }
+                                            });
+                                        </script>
+                                       @*<script>
                                             document.getElementById('loginForm').addEventListener('submit', async function (e) {
                                                 e.preventDefault();
 
@@ -86,68 +131,16 @@
                                                     });
 
                                                     const result = await response.json();
+
                                                     alert(result.message || `登入成功，token: ${result.data}`);
                                                 } catch (error) {
                                                     console.error('登入錯誤:', error);
                                                     alert('登入失敗，請稍後再試。');
                                                 }
                                             });
-                                        </script>
-@*                                         <h2>登入表單</h2>
-                                        <form class="user" id="loginForm">
-                                            <div class="form-group">
-                                                <input type="email" class="form-control form-control-user"
-                                                       id="account" placeholder="Enter Account...">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="password" class="form-control form-control-user"
-                                                       id="password" placeholder="Password">
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="custom-control custom-checkbox small">
-                                                    <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                    <label class="custom-control-label" for="customCheck">
-                                                        Remember Me
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <button type="submit" class="btn btn-primary btn-user btn-block">Login</button>
-                                        </form>
-                                        <hr>
-                                        <!-- 其他登入選項略過 -->
-                                    </div>
-
-                                    <script>
-                                        document.getElementById('loginForm').addEventListener('submit', async function (e) {
-                                            e.preventDefault(); // 防止預設表單送出行為
-
-                                            const account = document.getElementById('account').value;
-                                            const password = document.getElementById('password').value;
-
-                                            const body = {
-                                                account: account,
-                                                password: password
-                                            };
-
-                                            try {
-                                                const response = await fetch('/logInBirth', {
-                                                    method: 'POST',
-                                                    headers: {
-                                                        'Content-Type': 'application/json'
-                                                    },
-                                                    body: JSON.stringify(body)
-                                                });
-
-                                                const result = await response.json();
-                                                alert(result.message || `登入成功，token: ${result.data}`);
-                                            } catch (error) {
-                                                console.error('登入錯誤:', error);
-                                                alert('登入失敗，請稍後再試。');
-                                            }
-                                        });
-                                    </script> *@
-@*                                     <hr>
-                                    <div class="text-center">
+                                        </script>  *@
+                                     <hr>
+@*                                     <div class="text-center">
                                         <a class="small" href="forgot-password.html">Forgot Password?</a>
                                     </div>
                                     <div class="text-center">

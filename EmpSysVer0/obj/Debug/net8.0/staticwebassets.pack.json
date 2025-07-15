@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\css\\sb-admin-2.min.css"
     },
     {
+      "Id": "D:\\HankLee\\Code\\ASP.NET\\Project\\EmpSysVer0\\EmpSysVer0\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
       "Id": "D:\\HankLee\\Code\\ASP.NET\\Project\\EmpSysVer0\\EmpSysVer0\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
@@ -67,6 +71,10 @@
     {
       "Id": "D:\\HankLee\\Code\\ASP.NET\\Project\\EmpSysVer0\\EmpSysVer0\\wwwroot\\js\\sb-admin-2.min.js",
       "PackagePath": "staticwebassets\\js\\sb-admin-2.min.js"
+    },
+    {
+      "Id": "D:\\HankLee\\Code\\ASP.NET\\Project\\EmpSysVer0\\EmpSysVer0\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
       "Id": "D:\\HankLee\\Code\\ASP.NET\\Project\\EmpSysVer0\\EmpSysVer0\\wwwroot\\lib\\bootstrap\\LICENSE",

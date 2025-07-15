@@ -32,6 +32,7 @@ namespace EmpSysVer0
                 //.UseSqlServer("Data Source =10.11.37.148; Initial Catalog = TrainDB121309; Persist Security Info = True; User ID = 121309; Password = 121309");
                 //將連線字串放入appsettings
                 //.UseSqlServer("Server=.;Database=EmpData;Trusted_Connection=True;MultipleActiveResultSets=true;Persist Security Info=True;");
+                //appsettings環境變數存取
                 .UseSqlServer(configuration.GetConnectionString("DbString"));
 
             });
@@ -67,7 +68,8 @@ namespace EmpSysVer0
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
-
+            //配合PagesController透過status code導向頁面
+            app.UseStatusCodePagesWithReExecute("/Error/{0}");
             app.MapRazorPages();
         }
     }

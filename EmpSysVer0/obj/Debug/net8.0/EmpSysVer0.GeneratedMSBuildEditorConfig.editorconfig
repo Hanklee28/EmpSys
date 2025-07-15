@@ -32,20 +32,16 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnV0dG9uc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/HankLee/Code/ASP.NET/Project/EmpSysVer0/EmpSysVer0/Views/Home/Api.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBcGkuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/HankLee/Code/ASP.NET/Project/EmpSysVer0/EmpSysVer0/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/HankLee/Code/ASP.NET/Project/EmpSysVer0/EmpSysVer0/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/HankLee/Code/ASP.NET/Project/EmpSysVer0/EmpSysVer0/Views/Pages/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HankLee/Code/ASP.NET/Project/EmpSysVer0/EmpSysVer0/Views/Pages/NFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcTkZvdW5kLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/HankLee/Code/ASP.NET/Project/EmpSysVer0/EmpSysVer0/Views/Shared/Error.cshtml]
@@ -60,8 +56,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WaWV3U3RhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/HankLee/Code/ASP.NET/Project/EmpSysVer0/EmpSysVer0/Views/Test/C7test.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdFxDN3Rlc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/HankLee/Code/ASP.NET/Project/EmpSysVer0/EmpSysVer0/Views/Test/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HankLee/Code/ASP.NET/Project/EmpSysVer0/EmpSysVer0/Views/Test/Test2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdFxUZXN0Mi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/HankLee/Code/ASP.NET/Project/EmpSysVer0/EmpSysVer0/Views/_ViewImports.cshtml]

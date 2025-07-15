@@ -18,11 +18,6 @@ namespace EmpSysVer0.Controllers
         {
             _dbcontext = dbcontext;
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
-
 
         //列出所有部門
         [Route("allDept")]

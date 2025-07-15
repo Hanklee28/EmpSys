@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pSxSs0US7YGBHvIoF/jhqoY2O91eY2bgVkeDD9h32Zs=",
+  "Hash": "IVEWDXqh8jLY4l5ahYfIInosvUjOko6YEJ6rdcjNNNU=",
   "Source": "EmpSysVer0",
   "BasePath": "_content/EmpSysVer0",
   "Mode": "Default",
@@ -120,6 +120,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\sb-admin-2.min.css"
+    },
+    {
+      "Identity": "D:\\HankLee\\Code\\ASP.NET\\Project\\EmpSysVer0\\EmpSysVer0\\wwwroot\\css\\site.css",
+      "SourceId": "EmpSysVer0",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\HankLee\\Code\\ASP.NET\\Project\\EmpSysVer0\\EmpSysVer0\\wwwroot\\",
+      "BasePath": "_content/EmpSysVer0",
+      "RelativePath": "css/site#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "c2tiyv64ts",
+      "Integrity": "pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
       "Identity": "D:\\HankLee\\Code\\ASP.NET\\Project\\EmpSysVer0\\EmpSysVer0\\wwwroot\\favicon.ico",
@@ -393,6 +414,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\sb-admin-2.min.js"
+    },
+    {
+      "Identity": "D:\\HankLee\\Code\\ASP.NET\\Project\\EmpSysVer0\\EmpSysVer0\\wwwroot\\js\\site.js",
+      "SourceId": "EmpSysVer0",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\HankLee\\Code\\ASP.NET\\Project\\EmpSysVer0\\EmpSysVer0\\wwwroot\\",
+      "BasePath": "_content/EmpSysVer0",
+      "RelativePath": "js/site#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xtxxf3hu2r",
+      "Integrity": "hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
       "Identity": "D:\\HankLee\\Code\\ASP.NET\\Project\\EmpSysVer0\\EmpSysVer0\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
@@ -40018,6 +40060,88 @@
       ]
     },
     {
+      "Route": "css/site.c2tiyv64ts.css",
+      "AssetFile": "D:\\HankLee\\Code\\ASP.NET\\Project\\EmpSysVer0\\EmpSysVer0\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "362"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Apr 2025 09:18:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "c2tiyv64ts"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css",
+      "AssetFile": "D:\\HankLee\\Code\\ASP.NET\\Project\\EmpSysVer0\\EmpSysVer0\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "362"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Apr 2025 09:18:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
+        }
+      ]
+    },
+    {
       "Route": "EmpSysVer0.3m0uldbsjv.bundle.scp.css",
       "AssetFile": "D:\\HankLee\\Code\\ASP.NET\\Project\\EmpSysVer0\\EmpSysVer0\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\EmpSysVer0.bundle.scp.css",
       "Selectors": [],
@@ -41244,6 +41368,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-Pb0TXW+HaVf7gLiHG0CEv+geRJyDh7va8HuLJFFzJ4c="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.js",
+      "AssetFile": "D:\\HankLee\\Code\\ASP.NET\\Project\\EmpSysVer0\\EmpSysVer0\\wwwroot\\js\\site.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "231"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Apr 2025 09:18:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.xtxxf3hu2r.js",
+      "AssetFile": "D:\\HankLee\\Code\\ASP.NET\\Project\\EmpSysVer0\\EmpSysVer0\\wwwroot\\js\\site.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "231"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Apr 2025 09:18:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xtxxf3hu2r"
+        },
+        {
+          "Name": "label",
+          "Value": "js/site.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo="
         }
       ]
     },

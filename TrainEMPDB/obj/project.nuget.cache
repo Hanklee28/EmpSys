@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "a8OoAQ6+3ko=",
+  "dgSpecHash": "ITlqtbRmuDo=",
   "success": true,
-  "projectFilePath": "D:\\HankLee\\ASP.NET\\EmpSysVer0\\TrainEMPDB\\TrainEMPDB.csproj",
+  "projectFilePath": "D:\\HankLee\\Code\\ASP.NET\\Project\\EmpSysVer0\\TrainEMPDB\\TrainEMPDB.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\wistronits\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\wistronits\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

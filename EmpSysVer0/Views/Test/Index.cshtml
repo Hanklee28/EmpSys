@@ -1,4 +1,7 @@
-﻿<div class="container-fluid">
+﻿@* @{
+    ViewBag.Title = "Test Page";
+} *@
+<div class="container-fluid">
 
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800">Test</h1>
@@ -95,73 +98,8 @@
                 </script>
             }
 
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+         @*    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> *@
         </div>
     </div>
 
 </div>
-@* <div class="container-fluid">
-
-    <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Test</h1>
-
-    <h2>部門員工列表</h2>
-
-    <!-- 部門選擇 -->
-    <div class="form-group">
-        <label for="deptNo">選擇部門編號：</label>
-        <select id="deptNo" class="form-control" style="width: 200px;">
-            <option value="">請選擇</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-        </select>
-    </div>
-
-    <!-- 查詢按鈕 -->
-    <button id="loadEmployees" class="btn btn-primary">查詢</button>
-
-    <!-- 顯示員工列表 -->
-    <ul id="employeeList" class="mt-4"></ul>
-
-
-    @section Scripts {
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-        <script>
-            $(document).ready(function () {
-                // 點擊查詢按鈕時執行
-                $('#loadEmployees').click(function () {
-                    var deptNo = $('#deptNo').val(); // 取得使用者輸入的部門編號
-                    if (deptNo) {
-                        $.ajax({
-                            url: '/api/employee/db', // 呼叫 API 端點
-                            type: 'GET', // 使用 GET 方法
-                            headers: { 'header': deptNo }, // 在 Header 傳遞部門編號
-                            success: function (data) {
-                                $('#employeeList').empty(); // 清空先前的結果
-                                if (data && data.length > 0) {
-                                    // 遍歷返回的員工數據，並添加到列表
-                                    $.each(data, function (index, emp) {
-                                        $('#employeeList').append('<li>' + emp.empName + '</li>');
-                                    });
-                                } else {
-                                    $('#employeeList').append('<li>沒有找到員工</li>'); // 無數據時顯示
-                                }
-                            },
-                            error: function () {
-                                alert('請求失敗，請重試'); // 錯誤處理
-                            }
-                        });
-                    } else {
-                        alert('請輸入部門編號'); // 提示輸入部門編號
-                    }
-                });
-            });
-        </script>
-    }
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-
-</div> *@

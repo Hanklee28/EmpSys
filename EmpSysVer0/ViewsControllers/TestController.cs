@@ -16,7 +16,14 @@ namespace EmpSysVer0.ViewsControllers
         {
             return View();
         }
-
+        public IActionResult Test2()
+        {
+            return View();
+        }
+        public IActionResult C7test()
+        {
+            return View();
+        }
 
 
         //[Route("OK")]

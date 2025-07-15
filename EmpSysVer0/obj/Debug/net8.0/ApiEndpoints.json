@@ -1,16 +1,6 @@
 [
   {
     "ContainingType": "EmpSysVer0.Controllers.DeptController",
-    "Method": "Index",
-    "RelativePath": "api/Dept",
-    "HttpMethod": "",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EmpSysVer0.Controllers.DeptController",
     "Method": "AllDept",
     "RelativePath": "api/Dept/allDept",
     "HttpMethod": "GET",
@@ -103,6 +93,58 @@
     "ContainingType": "EmpSysVer0.Controllers.LogController",
     "Method": "Log",
     "RelativePath": "api/Log/log",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmpSysVer0.Controllers.PenaltyRecordsController",
+    "Method": "Delete",
+    "RelativePath": "api/PenaltyRecords/DeletePenaltyRecord/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmpSysVer0.Controllers.PenaltyRecordsController",
+    "Method": "Get",
+    "RelativePath": "api/PenaltyRecords/GetPenaltyRecords",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "startDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "endDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "keyword",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmpSysVer0.Controllers.TestController",
+    "Method": "OK",
+    "RelativePath": "api/Test/OK",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

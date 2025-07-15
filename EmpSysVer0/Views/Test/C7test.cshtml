@@ -1,0 +1,94 @@
+﻿<div class="container-fluid">
+    @{
+        ViewBag.Title = "裁罰紀錄查詢";
+        Layout = "~/Views/Shared/_Layout.cshtml"; // 預設Layout
+    }
+
+    <h2>裁罰紀錄查詢</h2>
+
+    <div style="margin-bottom: 20px;">
+        日期範圍：
+        <input type="date" id="startDate" value="2025-04-01" />
+        to
+        <input type="date" id="endDate" value="2025-04-03" />
+        關鍵字：
+        <input type="text" id="keyword" value="洗錢" />
+        <button onclick="search()">查詢</button>
+        <button onclick="reset()">匯入</button>
+    </div>
+
+    <table id="resultTable" border="1" style="width:100%; text-align:left;">
+        <thead>
+            <tr>
+                <th>項次</th>
+                <th>裁罰日期</th>
+                <th>受罰公司</th>
+                <th>違反事實</th>
+                <th>違反法令</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    @section Scripts {
+        <script>
+            function search() {
+                const startDate = document.getElementById('startDate').value;
+                const endDate = document.getElementById('endDate').value;
+                const keyword = document.getElementById('keyword').value;
+
+                fetch(`/api/penaltyrecords?startDate=${startDate}&endDate=${endDate}&keyword=${encodeURIComponent(keyword)}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        const tbody = document.querySelector('#resultTable tbody');
+                        tbody.innerHTML = '';
+                        data.forEach((item, index) => {
+                            const row = `
+                                <tr>
+                                    <td>${index + 1}</td>
+                                    <td>${item.penaltyDate}</td>
+                                    <td>${item.company}</td>
+                                    <td>${item.violationFact}</td>
+                                    <td>${item.violationLaw}</td>
+                                    <td><button onclick="deleteRecord(${item.id})">🗑️</button></td>
+                                </tr>`;
+                            tbody.innerHTML += row;
+                        });
+                    });
+            }
+
+            function deleteRecord(id) {
+                if (!confirm("確定要刪除這筆資料嗎？")) return;
+
+                fetch(`/api/penaltyrecords/${id}`, {
+                    method: 'DELETE'
+                })
+                .then(res => {
+                    if (res.ok) {
+                        alert("刪除成功");
+                        search();
+                    } else {
+                        alert("刪除失敗");
+                    }
+                })
+                .catch(err => {
+                    console.error(err);
+                    alert("刪除時發生錯誤");
+                });
+            }
+
+            function reset() {
+                document.getElementById('startDate').value = '';
+                document.getElementById('endDate').value = '';
+                document.getElementById('keyword').value = '';
+                document.querySelector('#resultTable tbody').innerHTML = '';
+            }
+
+            window.onload = search;
+        </script>
+    }
+
+</div>
+
+

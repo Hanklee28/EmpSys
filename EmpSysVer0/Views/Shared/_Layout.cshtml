@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>員工系統 @ViewBag.Title</title>
 
     <!-- Custom fonts for this template-->
     <link href="~/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -31,7 +31,7 @@
 
             <!-- Sidebar - Brand -->
  <!-------------------------------------------- TEST -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/home">
  <!-------------------------------------------- TEST -->
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
@@ -44,7 +44,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="home">
+                <a class="nav-link" href="/home">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>
@@ -71,7 +71,10 @@
  <!-------------------------------------------- TEST -->
                         <a class="collapse-item" href="Buttons">Buttons</a>
  <!-------------------------------------------- TEST -->
-                        <a class="collapse-item" href="Test">Test</a>
+                        <a class="collapse-item" href="/Test">Test</a>
+                        <a class="collapse-item" href="/Test/Test2">Test2</a>
+                        <a class="collapse-item" href="/Test/C7test">C7test</a>
+ <!-------------------------------------------- TEST -->
                     </div>
                 </div>
             </li>
@@ -114,13 +117,13 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Login Screens:</h6>
  <!-------------------------------------------- TEST -->
-                        <a class="collapse-item" href="Pages/Login">Login</a>
+                        <a class="collapse-item" href="/Pages/Login">Login</a>
  <!-------------------------------------------- TEST -->
                         <a class="collapse-item" href="register.html">Register</a>
                         <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
+                        <a class="collapse-item" href="/Pages/NFound">404 Page</a>
                         <a class="collapse-item" href="Api.cshtml">API TEST Page</a>
                     </div>
                 </div>
@@ -346,17 +349,6 @@
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
  <!------------------------------------ TEST LOGIN ---------------->
                                 <span id="userName" class="mr-2 d-none d-lg-inline text-gray-600 small">訪客</span>
-                                <script>
-                                    window.addEventListener('DOMContentLoaded', () => {
-                                        const name = localStorage.getItem('userName');
-                                        if (name) {
-                                            const el = document.getElementById('userName');
-                                            if (el) el.textContent = name;
-                                        }
-                                    });
-                                </script>
- <!------------------------------------ TEST LOGIN ---------------->
-
                                 <img class="img-profile rounded-circle"
                                      src="~/img/undraw_profile.svg">
                             </a>
@@ -380,22 +372,6 @@
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
-                                <script>
-                                    function logoutUser() {
-                                        localStorage.removeItem('userName');
-                                        localStorage.removeItem("EmpNo");
-                                        window.location.href = '/home'; // or '/Home' 看你想導去哪
-                                    }
-                                </script>
-@*                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"> *@
-<!------------------------------------ TEST LOGOUT---------------->
-@*                                 <script>
-                                        localStorage.removeItem('userName');
-                                </script> *@
-<!------------------------------------ TEST LOGOUT---------------->
-@*                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a> *@
                             </div>
                         </li>
 
@@ -488,7 +464,25 @@
     <!-- Page level custom scripts -->
     <script src="~/js/demo/chart-area-demo.js"></script>
     <script src="~/js/demo/chart-pie-demo.js"></script>
+        <!------------------------------------ LOGIN ---------------->
 
+        <script>
+            window.addEventListener('DOMContentLoaded', () => {
+                const name = localStorage.getItem('userName');
+                if (name) {
+                    const el = document.getElementById('userName');
+                    if (el) el.textContent = name;
+                }
+            });
+        </script>
+        <!------------------------------------ LOGOUT ---------------->
+        <script>
+            function logoutUser() {
+                localStorage.removeItem('userName');
+                localStorage.removeItem("EmpNo");
+                window.location.href = '/home'; // or '/Home' 看你想導去哪
+            }
+        </script>
 </body>
 
 </html>
